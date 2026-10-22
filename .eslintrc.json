@@ -2,14 +2,12 @@
     "root" : true,
     "env": {
     "browser": true,
-    "es2021": true,
+    "es6": true,
     "node": true
   },
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime",
-    "plugin:jsx-a11y/recommended",
+    
     "prettier"
     ],
   "parserOptions": {
@@ -21,15 +19,9 @@
     "no-unused-vars": "error",
     "semi": ["error", "always"]
   },
-  "settings": {
-    "react": {
-        "version" : "detect"
-    }
-  },
+  
+  
 
-  "overrides": [
-    {
-      "files": ["*.js", "*.jsx"]
-    }
-]
+
+
 }
