@@ -8,11 +8,7 @@ const app = express();
 // Middleware
 app.use(bodyParser.json());
 
-app.use(
-  cors({
-    origin: 'https://lonely-cemetery-q7p76w44r5xrc4vj9-3000.app.github.dev',
-  })
-);
+app.use(cors());
 
 // Register API routes
 postsRoutes(app);
