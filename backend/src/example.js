@@ -2,6 +2,9 @@ import { initDatabase } from './db/init.js';
 
 import { Post } from './db/models/post.js';
 
+import dotenv from 'dotenv';
+dotenv.config();
+
 try {
   await initDatabase();
 } catch (error) {
@@ -9,17 +12,13 @@ try {
 }
 
 const post = new Post({
-  title: 'Hello Mongoose!',
-  author: 'John Jones',
-  contents: 'This post is stored in a MongoDB database using Mongoose.',
-  tags: ['mongoose', 'mongodb'],
+  title: 'Hello 2nd Post!',
+  author: 'James Johnson',
+  contents: 'New Author. New Post.',
+  tags: ['frontend'],
 });
 
-const createdPost = await post.save();
-
-await Post.findByIdAndUpdate(createdPost._id, {
-  $set: { title: 'Hello again, Mongoose!' },
-});
+await post.save();
 
 const posts = await Post.find();
 console.log(posts);
